@@ -22,8 +22,11 @@ echo $result
 
 if [[ -n "$result" ]]
 then
-	rm -r /home/lilianasntss/test/*
-	mv /home/lilianasntss/$result.PNG /home/lilianasntss/test/$result.PNG
+	cd ..
+	cd ..
+	rm -r /mnt/c/Users/liliana.sntss/Desktop/test/*
+	cp /mnt/c/Users/liliana.sntss/Pictures/$result.png /mnt/c/Users/liliana.sntss/Desktop/test/$result.png
 else
 	echo "la variable est vide"
 fi
+
