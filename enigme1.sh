@@ -100,14 +100,12 @@ result=$(grep $regex escapegame_2021.csv | cut -d ";" -f "2" )
 #si a variable n'est pas vide
 if [[ -n "$result" ]]
 then 
-	rm -r /mnt/c/Users/CM2021/Desktop/$nomDossier/E/B/A/C/D/*
-	cp /mnt/c/Users/CM2021/Desktop/imagesEnigme/$result.PNG /mnt/c/Users/CM2021/Desktop/$nomDossier/E/B/A/C/D/$result.PNG
-	cp /mnt/c/Users/CM2021/Desktop/imagesEnigme/ListeDeMateriel /mnt/c/Users/CM2021/Desktop/$nomDossier/E/C/A/D/B/ListeDeMateriel
+	rm -r /mnt/c/Users/CM2021/Desktop/$nomDossier/E/C/A/D/B/*
+	cp /mnt/c/Users/CM2021/Desktop/imagesEnigme/$result.PNG /mnt/c/Users/CM2021/Desktop/$nomDossier/E/C/A/D/B/$result.PNG
 else
 	echo $valeurDefaut
-	rm -r /mnt/c/Users/CM2021/Desktop/$nomDossier/E/B/A/C/D/*
-	cp /mnt/c/Users/CM2021/Desktop/imagesEnigme/$valeurDefaut.PNG /mnt/c/Users/CM2021/Desktop/$nomDossier/E/B/A/C/D/$valeurDefaut.PNG
-	cp /mnt/c/Users/CM2021/Desktop/imagesEnigme/ListeDeMateriel.txt /mnt/c/Users/CM2021/Desktop/$nomDossier/E/C/A/D/B/ListeDeMateriel.txt
+	rm -r /mnt/c/Users/CM2021/Desktop/$nomDossier/E/C/A/D/B/*
+	cp /mnt/c/Users/CM2021/Desktop/imagesEnigme/$valeurDefaut.PNG /mnt/c/Users/CM2021/Desktop/$nomDossier/E/C/A/D/B/$valeurDefaut.PNG
 fi
 
 
