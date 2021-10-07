@@ -10,20 +10,24 @@
 
 shopt -s -o nounset
 
+
 dateJour=$(date +%Y-%m-%d)
 
 regex=${dateJour}
 
+
+#declaration des variables
 declare result
 declare valeurDefaut=6
 declare nomDossier=TOP_SECRET
 
 
-
+#chemin vers le desktop
 cd ..
 cd ..
 cd /mnt/c/Users/CM2021/Desktop
 
+#function pour la creation des dossiers
 function dossier(){
 	mkdir $nomDossier 
 	mkdir $nomDossier/A $nomDossier/B $nomDossier/C $nomDossier/D $nomDossier/E
@@ -74,21 +78,26 @@ function dossier(){
 	mkdir $nomDossier/E/C/A/D/B
 }
 
+# si existe  un dossier qui se appelle commme $nomDossier
 if [ -d $nomDossier ]
 then
-	echo " le dossier existe "
+	#supprimer et creer les dossiers
 	rm -r $nomDossier
 	dossier
 else
+	#creer les dossiers 
 	dossier
 fi 
 
+#aller vers le dossier enigme1 dans wsl
 cd
 cd enigme1
 
+#sauvegarder dans la variable le 2 champ du document escapegame_2021.csv
 result=$(grep $regex escapegame_2021.csv | cut -d ";" -f "2" )
 
 
+#si a variable n'est pas vide
 if [[ -n "$result" ]]
 then 
 	rm -r /mnt/c/Users/CM2021/Desktop/$nomDossier/E/B/A/C/D/*
